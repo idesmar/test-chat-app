@@ -1,0 +1,130 @@
+@use 'colors' as *;
+@use 'screens' as *;
+@use 'app-module';
+@use 'form-module';
+
+
+$dark: #1a1a1a;
+
+body {
+	background-color: $dark;
+	font-family: 'Rubik', sans-serif;
+	box-sizing: border-box;
+	display: flex;
+	justify-content: center;
+}
+
+*, *::before, *::after {
+	box-sizing: inherit;
+	margin: 0;
+	padding: 0;
+}
+// 246 app
+.primary-container {
+	border: 1px solid green;
+	width: $ideal-web;
+	position: relative;
+	overflow: hidden;	
+
+}
+
+.sub-container {
+	border: 1px solid white;
+	margin-left: 363px; // 25.277777vw; // 
+	margin-right: 265.8px; // 17.708333vw;
+	padding-top: 148px;
+	padding-bottom: 147px;
+	
+	// ? 248px nearest to 250px
+	display: flex;
+	flex-direction: row-reverse;
+	align-items: center;
+	justify-content: center;
+
+	@media (max-width: $web-1) {
+		flex-direction: column-reverse;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	@media (max-width: $mobile) {
+		padding: 64px 0 70px 0;
+	}
+	
+
+	&::before {
+		content: '';
+		width: 510px;
+		height: 700px;
+		position: absolute;
+		background-image: linear-gradient(90deg, $gradient-bg);
+		top: 0;
+		left: -89px;
+		z-index: -1;
+		border-radius: 0 0 500px 500px;
+
+		@media (max-width: $mobile) {
+			top: -189px;
+			left: unset;
+			right: 50%;
+		}
+	}
+
+	&::after {
+		content: '';
+		width: 500px;
+		height: 700px;
+		position: absolute;
+		background-color: $right-bg;
+		bottom: 0;
+		right: -184px;
+		z-index: -1;
+		border-radius: 500px 500px 0 0;
+
+		@media (max-width: $mobile) {
+			bottom: 0;
+			right: unset;
+			left: 50%;
+		}
+	}
+
+}
+
+
+.main-section {
+	// flex-basis: 45ch;
+	// flex-basis: 450px;
+	width: 438.2px;
+	
+	@media (max-width: $web-1) {
+		text-align: center;
+		padding: 0 35px;
+	}
+
+	@media (max-width: $mobile) {
+		width: 100%;
+	}
+
+	
+	h1 {
+		color: $main-heading;
+		font-size: 2.5rem;
+		font-weight: 500;
+		margin-bottom: 22px;
+
+		@media (max-width: $web-1) {
+			margin: unset;
+			margin-top: 70.96px;
+			margin-bottom: 33.2px;
+		}
+	}
+	
+	p {
+		color: $paragraph;
+		line-height: 1.8;
+	}
+
+}
+
+
+

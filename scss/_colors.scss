@@ -1,0 +1,24 @@
+// * text colors
+$app-sub-heading: hsl(276, 100%, 81%); // Pale Violet
+$chat-left-text: hsl(276, 55%, 52%); // Moderate Violet
+$chat-right-text: hsl(271, 15%, 43%); // De-saturated Dark Violet
+$placeholder-text: hsl(206, 6%, 79%); // Grayish Blue
+$main-heading: hsl(271, 36%, 24%); // Very Dark De-saturated Violet
+$paragraph: hsl(270, 7%, 64%); // Dark Grayish Violet
+
+// * liner gradient
+// * These two colors are the vibrant background colors you see throughout the design and are applied as a linear gradient:
+$gradient-1: hsl(264, 100%, 61%); // Light Violet
+// $Light-Magenta: hsl(293, 100%, 63%); // Light Magenta:
+$gradient-bg: hsl(264, 100%, 61%), hsl(293, 100%, 63%);
+
+// *secondary colors
+$white: hsl(0, 0%, 100%);
+$app-inner-bg: hsl(270, 20%, 96%); // Light Grayish Violet
+$submit-btn-bg: hsl(271, 36%, 24%); // Very Dark De-saturated Violet
+$radio-btn-outline: hsl(289, 100%, 72%); // Very Light Magenta
+$chat-left-bg: hsl(272, 41%, 93%); // ? using color picker
+$right-bg: hsl(290, 38%, 97%);
+// * font 400 500 700
+
+$border-small: 5px;

@@ -1,0 +1,152 @@
+@use 'colors' as *;
+@use 'screens' as *;
+
+// ? renaming to make the form simpler might be better
+.form.chat-container {
+	font-size: 8px;
+	color: $white;
+
+	.chat.chat--left {
+		padding: 8px;
+		padding-bottom: 7px;
+		color: inherit;
+		max-width: unset;
+		width: 160px; // ? 160px needed
+		background-image: linear-gradient(270deg, $gradient-bg);
+		display: flex;
+		align-items: center;
+
+		&:hover {
+			cursor: pointer;
+		}
+	}
+}
+
+
+
+form {
+
+	.form-bottom {
+		// max-width: unset;
+		background-color: $white;
+		display: flex;
+		margin: 8px;
+		padding: 5px 4px;
+		border-radius: 1000vw;
+		overflow: hidden;
+
+		&:focus-within {
+			box-shadow: inset 0 0 1px 1px $submit-btn-bg;
+		}
+	}
+
+	.btn, .text {
+		border: none;
+		outline: none;
+		width: 100%;
+	}
+
+	.btn {
+		$diam: 24px;
+		max-width: $diam;
+		height: $diam;
+		border-radius: 50%;
+		background-color: $submit-btn-bg;
+		fill: $white;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		&:hover, &:focus {
+			cursor: pointer;
+			transform: scale(1.1);
+			box-shadow: inset 0 0 1px 1px $gradient-1;
+		}
+	}
+
+	.text {
+		font-size: inherit;
+		font-family: inherit;
+		color: $chat-right-text;
+		padding-left: 12px;
+		padding-top: 4px;
+		border-radius: 1000vh;
+
+		&::placeholder {
+			color: $placeholder-text;
+			font-family: inherit;
+			font-size: 9px;
+		}
+		&:focus {
+			outline: none;
+		}
+	}
+}
+
+
+
+.radio {
+
+	&__info {
+		margin-left: 8px;
+		display: flex;
+		align-items: center;
+		width: 100%;
+	
+		
+		&--amt {
+			display: block;
+			margin-left: auto;
+			margin-right: 8px;
+			font-size: 12px;
+			font-weight: 700;
+		}
+	}
+
+	&:focus-within, &:hover {
+		transform: scale(1.02);
+		background-color: $gradient-1;
+	}
+
+	&__btn {
+		position: relative;
+		
+		&--old:checked + &--new {
+			background-color: $submit-btn-bg;
+		}
+
+		&--old:focus + &--new,
+		&--old:hover + &--new {
+			box-shadow: inset 0 0 1px 1px $white;
+		}
+
+		&--new {
+			display: block;
+			$diam: 1.5em; // ? check dimension
+			width: $diam;
+			height: $diam;
+			border-radius: 50%;
+			background-color: transparent;
+			border: 1px solid $radio-btn-outline;
+		}
+	
+		&--old {
+			opacity: 0;
+			$diam: 1px;
+			width: $diam;
+			height: $diam;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%);
+			
+			&:focus, &:hover {
+				border: none;
+				outline: none;
+				cursor: pointer;
+			}
+		}
+	}
+}
+

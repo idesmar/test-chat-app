@@ -1,0 +1,144 @@
+@use 'colors' as *;
+@use 'screens' as *;
+
+// ? line created when using an empty div for styling
+// * solved after using a ::before pseudo element
+
+.app-section {
+	margin-right: 126px;
+	width: 100%;
+	flex-shrink: 0;
+	// border-radius: 19.5px;
+	overflow: hidden;
+	background-color: $app-inner-bg;
+	line-height: 1.4;
+
+	width: 248px;
+	border: 9px solid $white;
+	border-radius: 28px;
+
+		@media (max-width: $web-1) {
+		margin: unset;
+	}
+}
+
+.app-header {
+	position: relative;
+	background-image: linear-gradient(90deg, $gradient-bg);
+	background-color: rgba (0, 0, 50, 0.5);
+	display: flex;
+	justify-content: center;
+	border-radius: 0 0 5px 5px;
+	color: $white;
+	
+	.user {
+		display: flex;
+		align-items: center;
+		margin-top: 15px;
+		padding: 12px 14px;
+		width: 100%;
+		
+		&::after { // ? notch
+			content:'';
+			position: absolute;
+			top: 0;
+			left: 50%;
+			transform: translateX(-50%);
+			background-color: $white;
+			width: 130px;
+			height: 18px;
+			border-radius: 0 0 14px 14px;
+
+		}
+
+		.user-icon {
+			fill: $white;
+			
+			&--phone {
+				transform: rotate(45deg);
+			}
+			
+			&--dots {
+				margin-left: auto;
+			}
+		}
+
+		.user-photo {
+			$diam: 24px;
+			width: $diam;
+			height: $diam;
+			margin-left: 4px;
+			border: 1px solid $white;
+			border-radius: 50%;
+		}
+
+		.user-info {
+			margin-left: 8px;
+
+			&--name {
+				font-size: 11px;
+				font-weight: 700;
+			}
+
+			&--status {
+				color: $app-sub-heading;
+				font-size: 8px;
+				font-weight: 400;
+			}
+		}
+	}
+}
+
+
+.app-chat {
+	font-size: 8px;
+	font-weight: 400;
+	padding: 3px 0;
+}
+
+.chat-container {
+	display: flow-root;
+	padding: 8px; // padding-top: 11px;
+	padding-bottom: 0;
+
+
+	.chat-images-right {
+		float: right;
+		// border: 1px solid red;
+
+		img {
+			width: 40px;
+			border-radius: 8px;
+			margin-left: 6px;
+			margin-bottom: 5px;
+		}
+	}
+
+	&:nth-child(3) {
+		.chat:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	.chat {
+		padding: 6px 8px;
+		max-width: 128px;
+		margin-bottom: 8px;
+		border-radius: 10px;
+		clear: both;
+
+		&--left {
+			float: left;
+			color: $chat-left-text;
+			background-color: $chat-left-bg;
+			border-bottom-left-radius: 4px;
+		}
+
+		&--right {
+			float: right;
+			color: $chat-right-text;
+			background-color: $white;
+			border-bottom-right-radius: 4px;
+		}
+	}
+}
