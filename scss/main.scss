@@ -7,11 +7,10 @@
 $dark: #1a1a1a;
 
 body {
-	background-color: $dark;
+	background-color: $white;
 	font-family: 'Rubik', sans-serif;
 	box-sizing: border-box;
-	display: flex;
-	justify-content: center;
+	min-height: 100vh;
 }
 
 *, *::before, *::after {
@@ -21,15 +20,13 @@ body {
 }
 // 246 app
 .primary-container {
-	border: 1px solid green;
-	width: $ideal-web;
+	max-width: $ideal-web;
 	position: relative;
 	overflow: hidden;	
-
+	margin: auto;
 }
 
 .sub-container {
-	border: 1px solid white;
 	margin-left: 363px; // 25.277777vw; // 
 	margin-right: 265.8px; // 17.708333vw;
 	padding-top: 148px;
@@ -128,3 +125,6 @@ body {
 
 
 
+footer {
+	border-top: 5px solid hsl(51, 100%, 30%);
+}
